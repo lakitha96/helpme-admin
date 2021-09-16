@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 export interface RouteInfo {
@@ -9,7 +9,7 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Reports',         icon:'nc-bank',       class: '' },
+    { path: '/dashboard',     title: 'Reports',         icon:'nc-bank', class: '' },
     { path: '/organizations',     title: 'Organizations',         icon:'nc-bank',       class: '' },
     { path: '/users',     title: 'Users',         icon:'nc-single-02',       class: '' },
     { path: '/help-requests',     title: 'Help Requests',         icon:'nc-bullet-list-67',       class: '' },
