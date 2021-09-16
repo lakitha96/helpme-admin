@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendClient} from '../../backend.client';
 import {Router} from '@angular/router';
+import {MatTableDataSource} from '@angular/material/table';
+import {HttpErrorResponse} from '@angular/common/http';
 
 declare interface TableData {
   headerRow: string[];
@@ -14,22 +16,22 @@ declare interface TableData {
 })
 
 export class OrganizationsComponent implements OnInit {
-  displayedColumns: string[] = ['helpRequestId', 'username', 'amount', 'donatedDate'];
+  displayedColumns: string[] = ['orgName', 'location', 'username', 'email', 'action'];
   dataSource: any;
 
   constructor(private backendClient: BackendClient, private route: Router) {
   }
 
   ngOnInit(): void {
-    this.getDonationHistory();
+    this.getPendingOrganizations();
   }
 
-  getDonationHistory() {
-    // this.donationClient.getDonationHistoryForFundRequestId(this.fundRequestUuid).subscribe((response: any) => {
-    //   this.dataSource = new MatTableDataSource(response.data);
-    //   console.log(this.dataSource)
-    // }), (error: HttpErrorResponse) => {
-    //   alert(error.message);
-    // }
+  getPendingOrganizations() {
+    this.backendClient.getPendingOrganizations().subscribe((response: any) => {
+      this.dataSource = new MatTableDataSource(response.data);
+      console.log(this.dataSource)
+    }), (error: HttpErrorResponse) => {
+      alert(error.message);
+    }
   }
 }
