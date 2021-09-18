@@ -1,11 +1,10 @@
-<h4>Fund raised history</h4><br>
 
 
 <div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title"> Accept Organizations</h4>
+        <h4 class="card-title"> Pending Organizations</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -32,23 +31,15 @@
             </ng-container>
 
             <ng-container matColumnDef="action">
-              <mat-header-cell *matHeaderCellDef class=" text-danger"> action</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> approve</mat-header-cell>
               <mat-cell *matCellDef="let element">
-                  <td>
+                <td>
                   <p style="margin:0;">
-                    <a href>
-                      <button type="submit" class="btn accept-button btn-round btn-sm"><i
-                        class="nc-icon nc-check-2"></i></button>
-                    </a>
 
-                    <a href>
-                      <button type="submit" class="btn btn-danger btn-round btn-sm"
-                              onclick="return confirm('Are you sure you want to delete?')">
-                        <i class="nc-icon nc-simple-remove"></i>
-                      </button>
-                    </a>
+                    <button type="submit" class="btn accept-button btn-round btn-sm"><i
+                      class="nc-icon nc-check-2" (click)="approveOrganization(element.uuid)"></i></button>
                   </p>
-                  </td>
+                </td>
               </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -58,131 +49,50 @@
       </div>
     </div>
   </div>
+
   <div class="col-md-12">
-    <div class="card card-plain">
+    <div class="card">
       <div class="card-header">
-        <h4 class="card-title"> Manage Organizations</h4>
+        <h4 class="card-title"> Active Organizations</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table">
-            <thead class=" text-danger">
-            <th>
-              Organization Name
-            </th>
-            <th>
-              Location
-            </th>
-            <th>
-              Ownwer
-            </th>
-            <th>
-              Contact Number
-            </th>
-            <th>
+          <table mat-table [dataSource]="allOrganizationDataSource" class="table">
 
-            </th>
-            </thead>
-            <tbody>
-            <tr>
-              <td>
-                Dakota Rice
-              </td>
-              <td>
-                Niger
-              </td>
-              <td>
-                Oud-Turnhout
-              </td>
-              <td>
-                $36,738
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Minerva Hooper
-              </td>
-              <td>
-                Curaçao
-              </td>
-              <td>
-                Sinaai-Waas
-              </td>
-              <td>
-                $23,789
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Sage Rodriguez
-              </td>
-              <td>
-                Netherlands
-              </td>
-              <td>
-                Baileux
-              </td>
-              <td>
-                $56,142
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Philip Chaney
-              </td>
-              <td>
-                Korea, South
-              </td>
-              <td>
-                Overland Park
-              </td>
-              <td>
-                $38,735
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Doris Greene
-              </td>
-              <td>
-                Malawi
-              </td>
-              <td>
-                Feldkirchen in Kärnten
-              </td>
-              <td>
-                $63,542
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Mason Porter
-              </td>
-              <td>
-                Chile
-              </td>
-              <td>
-                Gloucester
-              </td>
-              <td>
-                $78,615
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Jon Porter
-              </td>
-              <td>
-                Portugal
-              </td>
-              <td>
-                Gloucester
-              </td>
-              <td>
-                $98,615
-              </td>
-            </tr>
-            </tbody>
+            <ng-container matColumnDef="orgName">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> Organization Name</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.orgName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="location">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> Location</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="username">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> username</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> email</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> temporary block</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <td>
+                  <div class="update ml-auto mr-auto">
+                    <button type="submit" class="btn btn-danger btn-round"
+                            (click)="blockOrganization(element.uuid)">BLOCK
+                    </button>
+                  </div>
+                </td>
+              </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
           </table>
         </div>
       </div>

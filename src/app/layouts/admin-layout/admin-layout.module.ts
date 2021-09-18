@@ -21,11 +21,15 @@ import {IconsComponent} from '../../pages/icons/icons.component';
 import {NotificationsComponent} from '../../pages/notifications/notifications.component';
 import {UpgradeComponent} from '../../pages/upgrade/upgrade.component';
 import {MatTableModule} from '@angular/material/table';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBteEPCEudB9YuRTAXXUTcG08kmeNdWt-0'
+    }),
     FormsModule,
     NgbModule,
     MatTableModule

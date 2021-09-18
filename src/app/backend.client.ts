@@ -31,4 +31,44 @@ export class BackendClient {
     const headers = this.getCustomHeaders();
     return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/admin/organization/pending`, {headers});
   }
+
+  public approveOrganization(uuid: any): Observable<any> {
+    const headers = this.getCustomHeaders();
+    return this.http.post<ApiCommonResponse>(`${this.apiServiceUrl}/admin/organization/approve/` + uuid, null, {headers});
+  }
+
+  public temporaryBlockOrganization(uuid: any): Observable<any> {
+    const headers = this.getCustomHeaders();
+    return this.http.post<ApiCommonResponse>(`${this.apiServiceUrl}/admin/organization/block/` + uuid, null, {headers});
+  }
+
+  getAllOrganizations() {
+    const headers = this.getCustomHeaders();
+    return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/admin/organization/all`, {headers});
+  }
+
+  getAllUsers() {
+    const headers = this.getCustomHeaders();
+    return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/admin/users/all`, {headers});
+  }
+
+  getAllHelpRequest() {
+    const headers = this.getCustomHeaders();
+    return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/admin/help-requests/all`, {headers});
+  }
+
+  getAllFundRequest() {
+    const headers = this.getCustomHeaders();
+    return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/admin/fund-requests/all`, {headers});
+  }
+
+  viewAllDonationDetails(fundRequestUuid: any) {
+    const headers = this.getCustomHeaders();
+    return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/admin/donations/all/` + fundRequestUuid, {headers});
+  }
+
+  public getAllOngoingHelpRequestsMapLocations(): Observable<any> {
+    const headers = this.getCustomHeaders();
+    return this.http.get<ApiCommonResponse>(`${this.apiServiceUrl}/helps/affected/location/`, {headers});
+  }
 }

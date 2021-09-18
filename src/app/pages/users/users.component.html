@@ -1,252 +1,37 @@
 <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title"> Mange Users</h4>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class=" text-danger">
-                <th>
-                  Username
-                </th>
-                <th>
-                  Full Name
-                </th>
-                <th>
-                  Location
-                </th>
-                <th>
-                  Contact Number
-                </th>
-                <th>
-                    NIC
-                </th>
-                <th>
-                    
-                </th>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>
-                    User 01
-                  </td>
-                  <td>
-                    User Fullname
-                  </td>
-                  <td>
-                    Colombo
-                  </td>
-                  <td>
-                    0771875611
-                  </td>
-                  <td>
-                    901234567V
-                  </td>
-
-                  <td class="text-right">
-                    <p style="margin:0;">
-                                              
-                        <a href>
-                            <button type="submit" class="btn btn-danger btn-round btn-sm" onclick="return confirm('Are you sure you want to delete?')">
-                                <i class="nc-icon nc-simple-remove"></i>
-                            </button>
-                        </a>
-                      </p>
-                  </td>
-                </tr>
-
-                <tr>
-                    <td>
-                      User 01
-                    </td>
-                    <td>
-                      User Fullname
-                    </td>
-                    <td>
-                      Colombo
-                    </td>
-                    <td>
-                      0771875611
-                    </td>
-                    <td>
-                      901234567V
-                    </td>
-  
-                    <td class="text-right">
-                      <p style="margin:0;">
-                                                
-                          <a href>
-                              <button type="submit" class="btn btn-danger btn-round btn-sm" onclick="return confirm('Are you sure you want to delete?')">
-                                  <i class="nc-icon nc-simple-remove"></i>
-                              </button>
-                          </a>
-                        </p>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      User 01
-                    </td>
-                    <td>
-                      User Fullname
-                    </td>
-                    <td>
-                      Colombo
-                    </td>
-                    <td>
-                      0771875611
-                    </td>
-                    <td>
-                      901234567V
-                    </td>
-  
-                    <td class="text-right">
-                      <p style="margin:0;">
-                                                
-                          <a href>
-                              <button type="submit" class="btn btn-danger btn-round btn-sm" onclick="return confirm('Are you sure you want to delete?')">
-                                  <i class="nc-icon nc-simple-remove"></i>
-                              </button>
-                          </a>
-                        </p>
-                    </td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> All Users</h4>
       </div>
-    </div>
-    <div class="col-md-12">
-      <div class="card card-plain">
-        <div class="card-header">
-          <h4 class="card-title"> Manage Users</h4>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class=" text-danger">
-                <th>
-                  Organization Name
-                </th>
-                <th>
-                  Location
-                </th>
-                <th>
-                  Ownwer
-                </th>
-                <th class="text-right">
-                  Contact Number
-                </th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    Dakota Rice
-                  </td>
-                  <td>
-                    Niger
-                  </td>
-                  <td>
-                    Oud-Turnhout
-                  </td>
-                  <td class="text-right">
-                    $36,738
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Minerva Hooper
-                  </td>
-                  <td>
-                    Curaçao
-                  </td>
-                  <td>
-                    Sinaai-Waas
-                  </td>
-                  <td class="text-right">
-                    $23,789
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Sage Rodriguez
-                  </td>
-                  <td>
-                    Netherlands
-                  </td>
-                  <td>
-                    Baileux
-                  </td>
-                  <td class="text-right">
-                    $56,142
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Philip Chaney
-                  </td>
-                  <td>
-                    Korea, South
-                  </td>
-                  <td>
-                    Overland Park
-                  </td>
-                  <td class="text-right">
-                    $38,735
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Doris Greene
-                  </td>
-                  <td>
-                    Malawi
-                  </td>
-                  <td>
-                    Feldkirchen in Kärnten
-                  </td>
-                  <td class="text-right">
-                    $63,542
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mason Porter
-                  </td>
-                  <td>
-                    Chile
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-right">
-                    $78,615
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Jon Porter
-                  </td>
-                  <td>
-                    Portugal
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-right">
-                    $98,615
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataSource" class="table">
+
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> Email</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> Name</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="role">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> Role</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef class=" text-danger"> Status</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </table>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

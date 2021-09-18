@@ -14,7 +14,6 @@ import {AppRoutes} from './app.routing';
 import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
-import {AgmCoreModule} from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './pages/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -41,7 +40,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes, {
-      useHash: true
+      useHash: false
     }),
     SidebarModule,
     NavbarModule,
@@ -64,9 +63,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC-nnj4WeNNlKojwS_7oC5OarJH2PwKlio'
-    }),
     MatFormFieldModule,
     FormsModule,
   ],
