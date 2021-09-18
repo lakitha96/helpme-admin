@@ -20,9 +20,9 @@ export class MapsComponent extends MapsService implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllOngoingHelpRequestsMapLocations();
   }
-
-  getDonationHistory() {
+  getAllOngoingHelpRequestsMapLocations() {
     this.backendClient.getAllOngoingHelpRequestsMapLocations().subscribe((response: any) => {
       this.locations = response.data;
       console.log(this.locations)

@@ -27,9 +27,7 @@ import {AgmCoreModule} from '@agm/core';
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBteEPCEudB9YuRTAXXUTcG08kmeNdWt-0'
-    }),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyC-nnj4WeNNlKojwS_7oC5OarJH2PwKlio'}),
     FormsModule,
     NgbModule,
     MatTableModule

@@ -16,7 +16,7 @@ import {UpgradeComponent} from '../../pages/upgrade/upgrade.component';
 import {LoginComponent} from '../../pages/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
+  // {path: 'dashboard', component: DashboardComponent},
   {path: 'organizations', component: OrganizationsComponent},
   {path: 'users', component: UsersComponent},
   {path: 'help-requests', component: HelpRequestsComponent},

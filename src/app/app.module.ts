@@ -40,7 +40,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes, {
-      useHash: false
+      useHash: true
     }),
     SidebarModule,
     NavbarModule,

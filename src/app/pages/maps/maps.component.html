@@ -2,14 +2,9 @@
   <div class="col-md-12">
     <div class="card ">
       <div class="card-header ">
-        Google Maps
+        Affected Area Map
       </div>
       <div class="card-body ">
-<!--        <div id="map" class="map">-->
-<!--          <agm-map [latitude]='lat' [longitude]='lng' [zoom]="9">-->
-<!--            <agm-marker *ngFor='let loc of locations' [latitude]='loc.lat' [longitude]='loc.lng'></agm-marker>-->
-<!--          </agm-map>-->
-<!--        </div>-->
         <agm-map [latitude]='lat' [longitude]='lng' [zoom]="9">
           <agm-marker *ngFor='let loc of locations' [latitude]='loc.lat' [longitude]='loc.lng'></agm-marker>
         </agm-map>
