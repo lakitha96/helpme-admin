@@ -9,7 +9,7 @@ import {ApiCommonResponse} from './resources/api.common.response';
   providedIn: 'root'
 })
 export class BackendClient {
-  private apiServiceUrl = 'http://localhost:8081/api';
+  private apiServiceUrl = 'https://api-helpme-webapp.azurewebsites.net/api';
 
 
   constructor(private http: HttpClient) {
