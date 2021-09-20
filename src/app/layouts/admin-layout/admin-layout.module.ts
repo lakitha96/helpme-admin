@@ -22,6 +22,8 @@ import {NotificationsComponent} from '../../pages/notifications/notifications.co
 import {UpgradeComponent} from '../../pages/upgrade/upgrade.component';
 import {MatTableModule} from '@angular/material/table';
 import {AgmCoreModule} from '@agm/core';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {InterceptorService} from '../../loader/interceptor.service';
 
 @NgModule({
   imports: [

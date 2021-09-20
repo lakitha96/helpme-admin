@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.apiClient.loginNormalUser(new UserLoginDto(formData.controls.email.value,
       formData.controls.password.value)).subscribe(
       (response: any) => {
-        this.router.navigate(['maps']);
+        this.router.navigate(['/maps']);
         console.log(response)
         this.authService.login(new AuthTokenResponse(response.data.refresh_token, response.data.access_token));
       },

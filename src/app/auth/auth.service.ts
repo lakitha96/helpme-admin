@@ -21,7 +21,7 @@ export class AuthService {
   login(authTokenResponse: AuthTokenResponse) {
     this.accessToken = authTokenResponse.access_token;
     localStorage.setItem('access_token', authTokenResponse.access_token);
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/maps']);
     this.userTokenInfo = this.getTokenInfo(authTokenResponse.access_token);
   }
 

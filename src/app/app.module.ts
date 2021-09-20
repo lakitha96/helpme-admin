@@ -14,7 +14,7 @@ import {AppRoutes} from './app.routing';
 import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './pages/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
@@ -29,6 +29,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {InterceptorService} from './loader/interceptor.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -65,8 +69,13 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
